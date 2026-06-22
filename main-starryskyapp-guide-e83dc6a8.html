@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空体育APP · 知识库指引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: 'Georgia', 'Noto Serif SC', '宋体', serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .page-wrapper {
+            max-width: 880px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 头部区 —— 类似文章标题 */
+        .article-header {
+            border-bottom: 1px solid #dfdad3;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #1f2a33;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .article-header .subhead {
+            font-size: 0.95rem;
+            color: #78736b;
+            border-left: 3px solid #b8a99c;
+            padding-left: 1rem;
+            margin-top: 0.4rem;
+            font-style: italic;
+        }
+
+        /* 介绍段 —— 目录感布局 */
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2.8rem;
+            padding: 0 0.25rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-text a {
+            color: #7f5e3b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8a99c;
+            transition: border-color 0.2s;
+        }
+
+        .intro-text a:hover {
+            border-bottom: 1px solid #7f5e3b;
+        }
+
+        /* 目录卡片区 —— 知识库网格 */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 3rem;
+        }
+
+        .dir-card {
+            background-color: #fffcf8;
+            border: 1px solid #e3dbd2;
+            padding: 1.5rem 1.2rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .dir-card:hover {
+            border-color: #c6b6a6;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .dir-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3f3a34;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+            border-left: 2px solid #c1ad9a;
+            padding-left: 0.75rem;
+        }
+
+        .dir-card p {
+            font-size: 0.92rem;
+            color: #5b564e;
+            line-height: 1.6;
+        }
+
+        .dir-card .tag {
+            display: inline-block;
+            background: #ede7e0;
+            font-size: 0.7rem;
+            color: #5f5548;
+            padding: 0.15rem 0.6rem;
+            margin-top: 0.7rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 说明区 —— 引用块风格 */
+        .explanation-block {
+            background: #f4efe9;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0;
+            border-left: 5px solid #b7a18e;
+        }
+
+        .explanation-block h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #2f2a24;
+            margin-bottom: 0.8rem;
+        }
+
+        .explanation-block p {
+            font-size: 0.98rem;
+            color: #3e3a35;
+        }
+
+        .explanation-block p + p {
+            margin-top: 0.9rem;
+        }
+
+        .explanation-block .source-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #7d7368;
+            border-top: 1px dashed #d4c9be;
+            padding-top: 0.8rem;
+        }
+
+        /* 提示框 */
+        .notice-box {
+            background: #fcfaf7;
+            border: 1px solid #d6cec4;
+            padding: 1.5rem 1.8rem;
+            margin: 2.2rem 0;
+            border-radius: 0px;
+            box-shadow: inset 0 0 0 1px #fff, 0 1px 3px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .notice-box::before {
+            content: "📌 提示";
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: #8a7a69;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .notice-box p {
+            font-size: 0.96rem;
+            color: #3b3731;
+        }
+
+        /* 相关信息区 */
+        .related-section {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #ded7cf;
+        }
+
+        .related-section h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2b2722;
+            margin-bottom: 1rem;
+        }
+
+        .related-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .related-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted #e3dbd2;
+            font-size: 0.95rem;
+            color: #4d4841;
+        }
+
+        .related-list li:last-child {
+            border-bottom: none;
+        }
+
+        .related-list .label {
+            display: inline-block;
+            background: #e4dbd1;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.5rem;
+            margin-right: 0.6rem;
+            color: #3f392f;
+            letter-spacing: 0.02em;
+        }
+
+        /* FAQ 摘要 —— 紧凑 */
+        .faq-mini {
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.7rem;
+            border-bottom: 1px solid #e7dfd7;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-mini summary {
+            font-size: 0.98rem;
+            font-weight: 400;
+            color: #3b352e;
+            cursor: pointer;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            color: #b09b87;
+            margin-right: 0.6rem;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .faq-mini details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-mini .faq-answer {
+            font-size: 0.9rem;
+            color: #58534b;
+            padding: 0.3rem 0 0.4rem 1.5rem;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            margin-top: 3.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e1d9d0;
+            font-size: 0.8rem;
+            color: #928a80;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .site-footer a {
+            color: #7f6d5b;
+            text-decoration: none;
+            border-bottom: 1px dotted #cfc3b8;
+        }
+
+        .site-footer a:hover {
+            border-bottom: 1px solid #7f6d5b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .article-header h1 {
+                font-size: 1.7rem;
+            }
+            .directory-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .explanation-block {
+                padding: 1.3rem 1.2rem;
+            }
+            .notice-box {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="article-header">
+            <h1>星空体育APP · 站点知识库</h1>
+            <div class="subhead">关于平台背景、内容边界与使用参考的说明</div>
+        </header>
+
+        <!-- 介绍段 -->
+        <div class="intro-text">
+            <p>
+                如果你正在寻找一个聚合体育资讯、赛事数据与运动文化的内容站点，<a href="https://main-starryskyapp.com">星空体育APP</a> 
+                可能是一个值得了解的参考。这个知识库页面尝试以整理目录的形式，呈现它的一些基本特征、内容方向以及常见的疑问。
+                下面几组卡片和说明段落，可以作为进一步探索的起点。
+            </p>
+            <p>
+                需要说明的是，这里并非官方文档，而是基于公开信息与用户常见关注点梳理的一份汇总。所有描述均力求客观，
+                不构成使用建议或承诺。具体功能与服务，建议以实际页面为准。
+            </p>
+        </div>
+
+        <!-- 目录感卡片区 -->
+        <div class="directory-grid">
+            <div class="dir-card">
+                <h3>📋 内容概览</h3>
+                <p>赛事动态、球队档案、比分追踪、专题盘点……覆盖主流联赛与部分小众项目，资讯更新有一定频率。<span class="tag">信息聚合</span></p>
+            </div>
+            <div class="dir-card">
+                <h3>🧭 导航结构</h3>
+                <p>首页、赛事、数据、社区等模块划分清晰，部分板块支持筛选与排序，方便按需浏览。<span class="tag">分类索引</span></p>
+            </div>
+            <div class="dir-card">
+                <h3>📌 社区与讨论</h3>
+                <p>设有用户交流区，可围绕比赛、球员、战术等话题发布观点，氛围偏向理性分享。<span class="tag">开放讨论</span></p>
+            </div>
+            <div class="dir-card">
+                <h3>🔍 搜索与检索</h3>
+                <p>内置搜索功能，可以快速定位历史文章或特定赛事，不过索引范围可能受限于当前内容库。<span class="tag">站内检索</span></p>
+            </div>
+        </div>
+
+        <!-- 说明区（引用块风格） -->
+        <div class="explanation-block">
+            <h2>关于站点的可信说明</h2>
+            <p>
+                在浏览任何体育类平台时，信息的真实性与时效性都是值得留意的方面。就目前可观察到的内容而言，
+                <a href="https://main-starryskyapp.com">星空体育APP</a> 在呈现赛事数据时通常会附注来源或比赛日期，
+                部分深度文章也带有署名或参考链接。当然，体育数据变动频繁，建议在参考比分、排名等信息时，
+                交叉核对官方或其他权威渠道。
+            </p>
+            <p>
+                另外，平台内用户发布的评论、分析等属于个人观点，不代表平台立场。如果你发现某些信息存在明显偏差，
+                可以通过站内反馈渠道提出。
+            </p>
+            <div class="source-note">—— 以上基于公开页面与常见使用场景整理 · 2025年4月</div>
+        </div>
+
+        <!-- 提示框 -->
+        <div class="notice-box">
+            <p>
+                提示：部分功能（如历史数据查询、深度分析报告）可能需要登录或特定权限。
+                此外，移动端与桌面端的布局略有差异，部分交互在窄屏下会折叠。建议根据自身设备习惯调整浏览方式。
+            </p>
+        </div>
+
+        <!-- 相关信息区 -->
+        <div class="related-section">
+            <h2>相关信息·速览</h2>
+            <ul class="related-list">
+                <li><span class="label">语言</span> 中文为主，部分赛事名词保留英文缩写</li>
+                <li><span class="label">更新</span> 比赛日期间内容更新较快，休赛期以专题和回顾为主</li>
+                <li><span class="label">社区</span> 发言需遵守版规，禁止恶意引战或虚假信息</li>
+                <li><span class="label">外部链接</span> 部分文章可能引用外部视频或数据页面，跳转时注意域名</li>
+            </ul>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <details>
+                <summary>星空体育APP 是否需要注册？</summary>
+                <div class="faq-answer">浏览大部分内容无需注册，但参与评论、收藏等功能需要创建账号。注册流程较为简单，通常需要邮箱或手机验证。</div>
+            </details>
+            <details>
+                <summary>数据准确度如何？</summary>
+                <div class="faq-answer">赛事数据（比分、统计等）通常与主流数据源保持一致，但可能存在几分钟的延迟。历史数据偶尔会有勘误，以官方更正为准。</div>
+            </details>
+            <details>
+                <summary>移动端体验怎么样？</summary>
+                <div class="faq-answer">页面适配了移动端，但部分复杂表格或长文在手机上的阅读体验略逊于桌面端。建议使用平板或电脑浏览深度内容。</div>
+            </details>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="site-footer">
+            <span>星空体育APP · 知识库页</span>
+            <span><a href="https://main-starryskyapp.com">星空体育APP</a> ｜ 仅供信息参考</span>
+        </footer>
+    </div>
+</body>
+</html>
