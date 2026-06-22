@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空体育APP · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #faf7f2;
+      color: #2b2b2b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      padding: 2.4rem 2.2rem;
+    }
+
+    /* 文章 header */
+    .article-header {
+      margin-bottom: 2.2rem;
+      border-bottom: 1px solid #ece8e0;
+      padding-bottom: 1.6rem;
+    }
+
+    .article-header h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1e1e1e;
+      margin-bottom: 0.5rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #5e5a55;
+      border-left: 4px solid #cbb9a6;
+      padding-left: 1rem;
+      margin-top: 0.2rem;
+      font-weight: 400;
+    }
+
+    /* 正文段落 */
+    .content p {
+      margin-bottom: 1.45rem;
+      font-size: 1rem;
+      color: #33312e;
+    }
+
+    .content p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* 引用 / 提示框 */
+    .insight-box {
+      background-color: #f6f1ea;
+      border-left: 5px solid #b7a48e;
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.5rem;
+      margin: 1.8rem 0;
+      font-size: 0.98rem;
+      color: #3a3733;
+    }
+
+    .insight-box strong {
+      color: #4d3e2e;
+      font-weight: 600;
+    }
+
+    .insight-box a {
+      color: #7a5f44;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .insight-box a:hover {
+      color: #3f2e1d;
+    }
+
+    /* 内联链接 */
+    .content a {
+      color: #7a5f44;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .content a:hover {
+      color: #4d3823;
+    }
+
+    /* 特点列表（简约卡片式） */
+    .feature-mini-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .feature-item {
+      flex: 1 1 160px;
+      background: #fcf9f5;
+      border: 1px solid #ece4da;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+    }
+
+    .feature-item .label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #2f2c27;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-item .desc {
+      font-size: 0.9rem;
+      color: #5f5951;
+      line-height: 1.45;
+    }
+
+    /* FAQ 摘要（极简） */
+    .faq-summary {
+      margin: 2rem 0 0.6rem;
+      background: #faf7f1;
+      padding: 1.2rem 1.5rem;
+      border-radius: 18px;
+      border: 1px solid #e5ddd3;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #2b2824;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-row .q {
+      font-weight: 600;
+      color: #4b4138;
+      min-width: 6.5em;
+    }
+
+    .faq-row .a {
+      color: #3d3934;
+    }
+
+    /* 结尾标识 */
+    .site-footnote {
+      margin-top: 2.4rem;
+      text-align: right;
+      font-size: 0.88rem;
+      color: #9b9287;
+      border-top: 1px solid #ece8e0;
+      padding-top: 1.2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 580px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page-wrap {
+        padding: 1.6rem 1.2rem;
+      }
+      .article-header h1 {
+        font-size: 1.7rem;
+      }
+      .feature-mini-grid {
+        flex-direction: column;
+      }
+      .feature-item {
+        flex: 1 1 auto;
+      }
+      .faq-row {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <div class="article-header">
+    <h1>关于「星空体育APP」你需要知道的几件事</h1>
+    <div class="lead">一个快速识别用途的简洁说明 · 从用户视角整理</div>
+  </div>
+
+  <div class="content">
+    <p>
+      第一次看到 <a href="https://site-starryskyapp.com">星空体育APP</a> 这个名字，很多人会下意识猜测：它是观星工具、天文社区，还是运动品牌？其实从字面直接理解就好——「星空」指向广阔与探索，「体育」则说明它的核心领域。这个站点提供的，是围绕体育资讯、赛事动态以及相关兴趣内容展开的信息聚合平台。
+    </p>
+
+    <p>
+      很多新用户访问时，第一反应是寻找“这网站能干什么”。简单说，在这里可以获取体育相关的话题整理、实时数据摘要、以及围绕赛事的讨论内容。它不提供直播或投注服务，而是更像一个信息门户，把分散在多个来源的体育内容加以归类和呈现。如果你平时关注各类联赛、选手动态或体育文化，会发现这里的内容密度不错。
+    </p>
+
+    <!-- 提示框 / 引用 -->
+    <div class="insight-box">
+      <strong>💡 使用前的一点提示</strong><br>
+      该站点不需要注册即可浏览大部分内容。部分深度专题或数据模块可能需要轻量登录，但整体访问门槛很低。建议直接通过浏览器打开 <a href="https://site-starryskyapp.com">星空体育APP</a> 感受一下信息结构，比看任何介绍都直观。
+    </div>
+
+    <p>
+      从内容布局来看，首页通常展示当日焦点、热门联赛回顾以及编辑精选的专栏。每个板块都有明确的标题和摘要，点击即可展开完整文章。信息层级做得比较干净，没有大量弹窗或复杂菜单，对只想安静阅读体育内容的用户很友好。
+    </p>
+
+    <!-- 特点卡片（简洁） -->
+    <div class="feature-mini-grid">
+      <div class="feature-item">
+        <span class="label">🏀 赛事覆盖</span>
+        <span class="desc">足球、篮球、网球、电竞等主流项目，兼顾深度与广度。</span>
+      </div>
+      <div class="feature-item">
+        <span class="label">📊 数据视角</span>
+        <span class="desc">不堆砌数字，用短评和对比帮用户快速理解趋势。</span>
+      </div>
+      <div class="feature-item">
+        <span class="label">📰 专栏阅读</span>
+        <span class="desc">定期更新的专题文章，适合喜欢理性分析的体育迷。</span>
+      </div>
+    </div>
+
+    <p>
+      如果你是一个想要快速了解某项赛事背景、或者寻找某个体育话题讨论的用户，直接打开 <a href="https://site-starryskyapp.com">星空体育APP</a>，在搜索框或分类导航里输入关键词，通常两三步就能找到相关内容。页面加载速度也属于中上水平，没有太多冗余脚本。
+    </p>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <h3>❓ 常见疑问摘要</h3>
+      <div class="faq-row"><span class="q">需要付费吗？</span><span class="a">绝大多数内容免费，部分深度报告可能设有会员标识，但目前比例很低。</span></div>
+      <div class="faq-row"><span class="q">有 App 吗？</span><span class="a">当前以响应式网站为主，手机浏览器体验良好，暂无独立客户端。</span></div>
+      <div class="faq-row"><span class="q">内容更新频率？</span><span class="a">日常赛事日更，专题文章每周 2–5 篇，休赛期相对减少。</span></div>
+    </div>
+
+    <p>
+      总的来说，这个站点的定位很清楚：做体育信息的整理者，而不是创造者。如果你厌倦了算法推荐的信息流，想找一个更安静、更结构化的体育阅读空间，不妨把它加入收藏夹。下次想看比赛回顾或某个话题分析时，第一个想起的或许就是这里。
+    </p>
+  </div>
+
+  <div class="site-footnote">
+    — 整理于用户视角 · 站点用途说明
+  </div>
+</div>
+</body>
+</html>
